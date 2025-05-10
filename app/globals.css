@@ -9,13 +9,15 @@
   --card-foreground: 222.2 84% 8%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
-  --primary: 13 93% 59%;
+  /* Updated to match #f34f38 */
+  --primary: 6 89% 59%;
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 13 93% 59%;
+  /* Updated to match #f34f38 */
+  --accent: 6 89% 59%;
   --accent-foreground: 222.2 47.4% 11.2%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
@@ -32,7 +34,8 @@
   --card-foreground: 210 40% 98%;
   --popover: 222.2 84% 4.9%;
   --popover-foreground: 210 40% 98%;
-  --primary: 24 95% 53%;
+  /* Updated to match #f34f38 */
+  --primary: 6 89% 59%;
   --primary-foreground: 222.2 47.4% 11.2%;
   --secondary: 217.2 32.6% 17.5%;
   --secondary-foreground: 210 40% 98%;
@@ -101,7 +104,7 @@ body::before {
   height: 30%;
   background: radial-gradient(
     circle,
-    rgba(249, 115, 22, 0.1) 0%,
+    rgba(243, 79, 56, 0.1) 0%,
     transparent 70%
   );
   border-radius: 50%;
@@ -122,7 +125,7 @@ body::before {
 
 .orange-gradient-btn:hover {
   background: linear-gradient(90deg, #d63a22 0%, #f34f38 100%);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 12px rgba(243, 79, 56, 0.3);
   transform: translateY(-1px);
 }
 

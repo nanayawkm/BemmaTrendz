@@ -1,0 +1,28 @@
+.transform-style-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Add smooth transition for the flip effect */
+.relative {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Ensure the container maintains its dimensions during flip */
+.group {
+  perspective: 1000px;
+}
+
+/* Add hover effect for better interactivity */
+.group:hover .relative {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+} 

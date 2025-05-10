@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Search, ShoppingBag, User } from "lucide-react";
+import { ChevronDown, Search, ShoppingBag, User, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { name: "Home", href: "/", hasDropdown: false },
@@ -11,6 +12,7 @@ const navItems = [
   { name: "Gallery", href: "/gallery", hasDropdown: false },
   { name: "Contact Us", href: "/contact", hasDropdown: false },
   { name: "Custom Order", href: "/custom-order", hasDropdown: false },
+  { name: "Reviews", href: "/reviews", hasDropdown: false },
 ];
 
 export default function Header() {
@@ -21,18 +23,24 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo and Brand */}
         <div className="flex items-center">
-          <div className="w-10 h-10 relative mr-2">
+          <Link href="/" className="flex items-center space-x-2 group">
             <Image
               src="/logo.png"
               alt="BemmaTrendz Logo"
               width={40}
               height={40}
-              className="object-contain"
+              className="cursor-pointer transition-transform duration-300 group-hover:scale-110"
             />
-          </div>
-          <div>
-            <h1 className="text-xl font-medium">BemmaTrendz</h1>
-          </div>
+            <div className="relative">
+              <span className="text-xl md:text-2xl font-playfair font-bold bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105 tracking-wide">
+                Bemma
+              </span>
+              <span className="text-xl md:text-2xl font-montserrat font-light tracking-[0.2em] text-gray-800 transition-all duration-300 group-hover:scale-105">
+                Trendz
+              </span>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] transition-all duration-300 group-hover:w-full"></div>
+            </div>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}

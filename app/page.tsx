@@ -1,3 +1,5 @@
+"use client";
+
 import BlogCard from "@/components/blog-card";
 import BrandLogo from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
@@ -9,8 +11,51 @@ import NewsletterSignup from "@/components/newsletter-signup";
 import ProductCard from "@/components/product-card";
 import PromotionCard from "@/components/promotion-card";
 import TestimonialSlider from "@/components/testimonial-slider";
+import useEmblaCarousel from 'embla-carousel-react';
+import { useCallback, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Home() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    dragFree: true,
+    containScroll: "trimSnaps"
+  });
+
+  const autoplay = useCallback(() => {
+    if (emblaApi) {
+      emblaApi.scrollNext();
+    }
+  }, [emblaApi]);
+
+  useEffect(() => {
+    const interval = setInterval(autoplay, 3000);
+    return () => clearInterval(interval);
+  }, [autoplay]);
+
+  const heroSlides = [
+    {
+      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      alt: "Elegant fashion model in white dress"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      alt: "Summer collection showcase"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      alt: "Casual street style fashion"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      alt: "Modern fashion collection"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      alt: "Luxury fashion showcase"
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
@@ -24,8 +69,8 @@ export default function Home() {
               <div className="flex flex-col md:flex-row md:items-center">
                 <div className="md:w-1/2 space-y-6 pb-8 md:pb-0">
                   <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-                    Find Your <span className="text-[#f34f38]">Perfect</span>{" "}
-                    Style
+                    Embrace <span className="text-[#f34f38]">Comfort</span>,{" "}
+                    Elevate Your Style
                   </h1>
                   <p className="text-gray-600 text-lg max-w-md">
                     Discover the latest fashion trends and express yourself with
@@ -35,25 +80,37 @@ export default function Home() {
                     <Button className="rounded-full orange-gradient-btn px-8 py-6 text-white shadow-lg">
                       SHOP NOW
                     </Button>
-                    <Button
-                      variant="ghost"
-                      className="px-6 py-6 text-[#f34f38] font-semibold bg-transparent border-none shadow-none hover:underline hover:bg-transparent focus:ring-0 focus:outline-none"
-                    >
-                      EXPLORE
-                    </Button>
+                    <Link href="/gallery">
+                      <Button
+                        variant="ghost"
+                        className="px-6 py-6 text-[#f34f38] font-semibold bg-transparent border-none shadow-none hover:underline hover:bg-transparent focus:ring-0 focus:outline-none"
+                      >
+                        EXPLORE
+                      </Button>
+                    </Link>
                   </div>
                 </div>
                 <div className="md:w-1/2 relative">
                   <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-[#f34f38]10 opacity-70"></div>
                   <div className="absolute -bottom-5 -right-5 w-32 h-32 rounded-full bg-[#f34f38]5 opacity-70"></div>
                   <div className="rounded-3xl overflow-hidden shadow-xl relative z-10">
-                    <Image
-                      src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                      alt="Fashion model with stylish outfit"
-                      width={600}
-                      height={700}
-                      className="mx-auto object-cover h-[500px] w-full"
-                    />
+                    <div className="relative">
+                      <div className="overflow-hidden" ref={emblaRef}>
+                        <div className="flex">
+                          {heroSlides.map((slide, index) => (
+                            <div key={index} className="flex-[0_0_100%] min-w-0">
+                              <Image
+                                src={slide.image}
+                                alt={slide.alt}
+                                width={600}
+                                height={700}
+                                className="mx-auto object-cover h-[500px] w-full"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -85,18 +142,16 @@ export default function Home() {
                   href="/product/vintage-floral-dress"
                 />
                 <ProductCard
-                  image="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
-                  title="Brown Casual Shirt"
-                  price="$39.00"
-                  colors={["bg-amber-800", "bg-gray-400", "bg-[#f34f38]"]}
-                  href="/product/brown-casual-shirt"
+                  image="https://images.unsplash.com/photo-1559563458-527698bf5295?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
+                  title="Leather Wallet"
+                  price="$49.00"
+                  href="/product/leather-wallet"
                 />
                 <ProductCard
-                  image="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
-                  title="Casual Gray Shirt Dress"
-                  price="$49.00"
-                  colors={["bg-gray-300", "bg-blue-300", "bg-[#f34f38]"]}
-                  href="/product/casual-gray-shirt-dress"
+                  image="https://images.unsplash.com/photo-1612336307429-8a898d10e223?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
+                  title="Blue Floral Dress"
+                  price="$69.00"
+                  href="/product/blue-floral-dress"
                 />
               </div>
               <div className="mt-8 text-center">
@@ -106,38 +161,6 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Special Offers */}
-        <section className="py-16">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-3">Special Offers</h2>
-              <p className="text-gray-500">
-                Limited time deals you don't want to miss
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              <PromotionCard
-                title="Special Make"
-                subtitle="Exclusive collection with premium quality"
-                image="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                bgColor="gradient-card"
-              />
-              <PromotionCard
-                title="Combo Offer"
-                subtitle="Buy two items and get one free"
-                image="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                bgColor="gradient-card"
-              />
-              <PromotionCard
-                title="New Arrival"
-                subtitle="Fresh styles for the new season"
-                image="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                bgColor="gradient-card"
-              />
             </div>
           </div>
         </section>
@@ -188,26 +211,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Brands */}
-        <section className="py-12">
-          <div className="container">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-2">Our Brands</h2>
-              <p className="text-gray-500">
-                Quality partnerships we're proud of
-              </p>
-            </div>
-            <div className="gradient-card p-8">
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-                <BrandLogo name="Clothing" />
-                <BrandLogo name="SUNSET" />
-                <BrandLogo name="VIPSTER" />
-                <BrandLogo name="BARCELONA" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Custom Order Section */}
         <section className="py-16">
           <div className="container">
@@ -253,32 +256,6 @@ export default function Home() {
                     <h3 className="font-medium">Custom Designs</h3>
                   </div>
                 </div>
-                <div className="rounded-xl overflow-hidden shadow-md">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1612336307429-8a898d10e223?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Perfect Fit"
-                    width={300}
-                    height={200}
-                    className="w-full h-32 object-cover"
-                    priority
-                  />
-                  <div className="p-3">
-                    <h3 className="font-medium">Perfect Fit</h3>
-                  </div>
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-md">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Quality Craftsmanship"
-                    width={300}
-                    height={200}
-                    className="w-full h-32 object-cover"
-                    priority
-                  />
-                  <div className="p-3">
-                    <h3 className="font-medium">Quality Craftsmanship</h3>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -322,7 +299,7 @@ export default function Home() {
         <NewsletterSignup />
 
         {/* Instagram Feed */}
-        <InstagramFeed />
+        <InstagramFeed instagramUrl="https://instagram.com/bemmatrendz" />
       </main>
 
       {/* Footer */}
@@ -340,6 +317,19 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span>+1 (555) 123-4567</span>
+                </li>
+                <li className="mt-3">
+                  <a 
+                    href="https://wa.me/15551234567" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center gap-2 bg-[#25D366] text-white px-3 py-2 rounded-lg hover:bg-[#128C7E] transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.019c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.72.045.477-.096.682z"/>
+                    </svg>
+                    <span>Order via WhatsApp</span>
+                  </a>
                 </li>
               </ul>
             </div>
