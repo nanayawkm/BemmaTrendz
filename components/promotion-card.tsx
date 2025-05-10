@@ -18,26 +18,30 @@ export default function PromotionCard({
 }: PromotionCardProps) {
   return (
     <div
-      className={`relative overflow-hidden ${bgColor} p-6 rounded-3xl shadow-lg`}
+      className={`relative overflow-hidden ${bgColor} p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-[280px]`}
     >
-      <div className="relative z-10 space-y-3">
-        <h3 className="text-lg font-bold">{title}</h3>
-        <p className="font-medium">{subtitle}</p>
-        {description && <p className="text-sm text-gray-600">{description}</p>}
+      <div className="relative space-y-3 max-w-[55%] z-10">
+        <span className="inline-block px-3 py-1 bg-[#f34f38]10 text-[#f34f38] rounded-full text-xs font-medium mb-2">
+          SPECIAL OFFER
+        </span>
+        <h3 className="text-xl font-bold">{title}</h3>
+        <p className="text-sm font-medium">{subtitle}</p>
+        {description && <p className="text-xs text-gray-600">{description}</p>}
         <Button
           variant="outline"
-          className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38] hover:text-white"
+          className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38] hover:text-white mt-4"
         >
           SHOP NOW
         </Button>
       </div>
-      <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-40 h-40 md:w-52 md:h-52 overflow-hidden">
         <Image
           src={image || "/placeholder.svg"}
           alt={title}
-          width={300}
-          height={200}
-          className="object-cover w-full h-full"
+          width={400}
+          height={400}
+          className="object-cover w-full h-full rounded-tl-[3rem]"
+          priority
         />
       </div>
     </div>

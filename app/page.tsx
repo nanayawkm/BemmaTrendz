@@ -111,95 +111,33 @@ export default function Home() {
         </section>
 
         {/* Special Offers */}
-        <section className="py-12">
+        <section className="py-16">
           <div className="container">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-2">Special Offers</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-3">Special Offers</h2>
               <p className="text-gray-500">
                 Limited time deals you don't want to miss
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              <div className="gradient-card p-6 relative overflow-hidden">
-                <div className="space-y-3 relative z-10">
-                  <span className="inline-block px-3 py-1 bg-[#f34f38]10 text-[#f34f38] rounded-full text-xs font-medium">
-                    40% OFF
-                  </span>
-                  <h3 className="text-xl font-bold">Special Make</h3>
-                  <p className="text-gray-600">
-                    Exclusive collection with premium quality
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38]10"
-                  >
-                    SHOP NOW
-                  </Button>
-                </div>
-                <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Sunglasses and shoes"
-                    width={200}
-                    height={200}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
-
-              <div className="gradient-card p-6 relative overflow-hidden">
-                <div className="space-y-3 relative z-10">
-                  <span className="inline-block px-3 py-1 bg-[#f34f38]10 text-[#f34f38] rounded-full text-xs font-medium">
-                    NEW ARRIVALS
-                  </span>
-                  <h3 className="text-xl font-bold">Combo Offer</h3>
-                  <p className="text-gray-600">
-                    Buy two items and get one free
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38]10"
-                  >
-                    SHOP NOW
-                  </Button>
-                </div>
-                <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Leather bag"
-                    width={200}
-                    height={200}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
-
-              <div className="gradient-card p-6 relative overflow-hidden">
-                <div className="space-y-3 relative z-10">
-                  <span className="inline-block px-3 py-1 bg-[#f34f38]10 text-[#f34f38] rounded-full text-xs font-medium">
-                    20% OFF
-                  </span>
-                  <h3 className="text-xl font-bold">New Arrival</h3>
-                  <p className="text-gray-600">
-                    Fresh styles for the new season
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38]10"
-                  >
-                    SHOP NOW
-                  </Button>
-                </div>
-                <div className="absolute bottom-0 right-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                    alt="Clothing on mannequin"
-                    width={200}
-                    height={200}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <PromotionCard
+                title="Special Make"
+                subtitle="Exclusive collection with premium quality"
+                image="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                bgColor="gradient-card"
+              />
+              <PromotionCard
+                title="Combo Offer"
+                subtitle="Buy two items and get one free"
+                image="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                bgColor="gradient-card"
+              />
+              <PromotionCard
+                title="New Arrival"
+                subtitle="Fresh styles for the new season"
+                image="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                bgColor="gradient-card"
+              />
             </div>
           </div>
         </section>
@@ -270,35 +208,78 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Promotions */}
-        <section className="py-12">
+        {/* Custom Order Section */}
+        <section className="py-16">
           <div className="container">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              <PromotionCard
-                title="35% Offer"
-                subtitle="SHOP NOW"
-                image="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                bgColor="bg-white-overlay"
-              />
-              <PromotionCard
-                title="Mega Sale Meta"
-                subtitle="Upto 40% Off"
-                description="Free Delivery"
-                image="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                bgColor="bg-white-overlay"
-              />
-              <PromotionCard
-                title="Special Deals"
-                subtitle="Upto 40% Off"
-                image="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                bgColor="bg-white-overlay"
-              />
-              <PromotionCard
-                title="Special Deals"
-                subtitle="Upto 40% Off"
-                image="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                bgColor="bg-white-overlay"
-              />
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-3">Custom Orders</h2>
+              <p className="text-gray-500">
+                Design your perfect outfit with our custom tailoring service
+              </p>
+            </div>
+            <div className="gradient-card p-8 text-center">
+              <div className="max-w-2xl mx-auto mb-6">
+                <p className="text-lg mb-4">Bring your vision to life with our expert tailors and premium fabrics.</p>
+                <Link href="/custom-order" className="inline-block">
+                  <Button className="rounded-full orange-gradient-btn px-8 py-3 text-white shadow-md">
+                    START CUSTOM ORDER
+                  </Button>
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Premium Fabric"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover"
+                    priority
+                  />
+                  <div className="p-3">
+                    <h3 className="font-medium">Premium Fabrics</h3>
+                  </div>
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Custom Designs"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover"
+                    priority
+                  />
+                  <div className="p-3">
+                    <h3 className="font-medium">Custom Designs</h3>
+                  </div>
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1612336307429-8a898d10e223?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Perfect Fit"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover"
+                    priority
+                  />
+                  <div className="p-3">
+                    <h3 className="font-medium">Perfect Fit</h3>
+                  </div>
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Quality Craftsmanship"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover"
+                    priority
+                  />
+                  <div className="p-3">
+                    <h3 className="font-medium">Quality Craftsmanship</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -346,7 +327,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-white pt-12 mt-12 border-t border-gray-100">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-8 pb-8 md:grid-cols-4">
             <div>
               <h3 className="mb-4 font-bold">Contact Us</h3>
@@ -444,10 +425,10 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/custom-order"
                     className="hover:text-[#f34f38] transition-colors"
                   >
-                    Privacy
+                    Custom Orders
                   </Link>
                 </li>
               </ul>
@@ -501,9 +482,9 @@ export default function Home() {
           <div className="border-t py-6 text-center text-sm text-gray-500">
             <p>Copyright © 2023 BemmaTrendz - All rights reserved</p>
             <div className="mt-4 flex justify-center gap-2">
-              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#f34f38] to-[#f34f38]"></div>
-              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#f34f38] to-[#f34f38]"></div>
-              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#f34f38] to-[#f34f38]"></div>
+              <div className="h-6 w-6 rounded-full bg-[#f34f38]"></div>
+              <div className="h-6 w-6 rounded-full bg-[#f34f38]"></div>
+              <div className="h-6 w-6 rounded-full bg-[#f34f38]"></div>
             </div>
           </div>
         </div>

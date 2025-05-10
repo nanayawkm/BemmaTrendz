@@ -22,16 +22,31 @@ const App = () => {
 
                 <section className="features">
                     <div className="feature-card">
-                        <h3>New Arrivals</h3>
-                        <p>Check out our latest collection</p>
+                        <div className="feature-image">
+                            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=500" alt="New Arrivals" />
+                        </div>
+                        <div className="feature-content">
+                            <h3>New Arrivals</h3>
+                            <p>Fresh styles for the season ahead</p>
+                        </div>
                     </div>
                     <div className="feature-card">
-                        <h3>Trending</h3>
-                        <p>See what's popular this season</p>
+                        <div className="feature-image">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500" alt="Trending" />
+                        </div>
+                        <div className="feature-content">
+                            <h3>Trending</h3>
+                            <p>What's hot in fashion right now</p>
+                        </div>
                     </div>
                     <div className="feature-card">
-                        <h3>Special Offers</h3>
-                        <p>Exclusive deals just for you</p>
+                        <div className="feature-image">
+                            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=500" alt="Special Offers" />
+                        </div>
+                        <div className="feature-content">
+                            <h3>Special Offers</h3>
+                            <p>Exclusive collection with premium quality</p>
+                        </div>
                     </div>
                 </section>
             </main>
