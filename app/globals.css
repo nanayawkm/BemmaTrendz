@@ -9,15 +9,15 @@
   --card-foreground: 222.2 84% 8%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
-  /* Updated to match #f34f38 */
-  --primary: 6 89% 59%;
+  /* Updated to match bolder orange */
+  --primary: 6 100% 40%;
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
-  /* Updated to match #f34f38 */
-  --accent: 6 89% 59%;
+  /* Updated to match bolder orange */
+  --accent: 6 100% 40%;
   --accent-foreground: 222.2 47.4% 11.2%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
@@ -69,10 +69,10 @@ body::before {
 
 /* Create a new class for gradient cards */
 .gradient-card {
-  background: linear-gradient(135deg, #fff0ed 0%, #ffe5e0 100%);
+  background: linear-gradient(135deg, rgba(194, 63, 45, 0.25) 0%, rgba(230, 61, 43, 0.2) 100%);
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(243, 79, 56, 0.08);
-  border: 1px solid rgba(243, 79, 56, 0.1);
+  box-shadow: 0 4px 20px rgba(194, 63, 45, 0.2);
+  border: 1px solid rgba(194, 63, 45, 0.25);
   overflow: hidden;
   position: relative;
 }
@@ -89,10 +89,11 @@ body::before {
 } */
 
 .hero-gradient {
-  background: linear-gradient(135deg, #fff0ed 0%, #ffe5e0 100%);
+  background: linear-gradient(135deg, rgba(194, 63, 45, 0.3) 0%, rgba(230, 61, 43, 0.25) 100%);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(194, 63, 45, 0.25);
 }
 
 .hero-gradient::after {
@@ -100,32 +101,33 @@ body::before {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 30%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
   background: radial-gradient(
     circle,
-    rgba(243, 79, 56, 0.1) 0%,
+    rgba(194, 63, 45, 0.3) 0%,
     transparent 70%
   );
   border-radius: 50%;
 }
 
 .bg-white-overlay {
-  background-color: #fff5f3;
+  background-color: #ffe8e4;
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(194, 63, 45, 0.15);
+  border: 1px solid rgba(194, 63, 45, 0.2);
 }
 
 .orange-gradient-btn {
-  background: linear-gradient(90deg, #f34f38 0%, #f34f38 100%);
+  background: linear-gradient(90deg, #b82e1a 0%, #d63624 100%);
   color: white;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .orange-gradient-btn:hover {
-  background: linear-gradient(90deg, #d63a22 0%, #f34f38 100%);
-  box-shadow: 0 4px 12px rgba(243, 79, 56, 0.3);
+  background: linear-gradient(90deg, #9c2818 0%, #c22e1f 100%);
+  box-shadow: 0 4px 12px rgba(194, 63, 45, 0.5);
   transform: translateY(-1px);
 }
 
@@ -136,4 +138,39 @@ body::before {
   body {
     @apply text-foreground;
   }
+}
+
+/* Feminine heading styles */
+.font-playfair {
+  font-family: var(--font-playfair);
+  letter-spacing: -0.02em;
+}
+
+.font-playfair span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.font-playfair span:hover {
+  transform: translateX(8px);
+}
+
+.font-playfair span::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b82e1a, #d63624);
+  transition: width 0.3s ease;
+}
+
+.font-playfair span:hover::after {
+  width: 100%;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
 }

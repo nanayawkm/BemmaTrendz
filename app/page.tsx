@@ -14,6 +14,7 @@ import TestimonialSlider from "@/components/testimonial-slider";
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import QuubeLogo from "@/components/quube-logo";
 
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -65,21 +66,25 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative py-12 md:py-20">
           <div className="container">
-            <div className="hero-gradient p-8 md:p-12">
+            <div className="hero-gradient p-8 md:p-12 bg-gradient-to-br from-[#f34f38]/10 via-[#f34f38]/5 to-transparent">
               <div className="flex flex-col md:flex-row md:items-center">
                 <div className="md:w-1/2 space-y-6 pb-8 md:pb-0">
-                  <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-                    Embrace <span className="text-[#f34f38]">Comfort</span>,{" "}
-                    Elevate Your Style
+                  <h1 className="font-playfair text-4xl font-bold md:text-5xl lg:text-6xl leading-tight tracking-wide">
+                    <span className="block text-[#b82e1a] mb-2">Embrace</span>
+                    <span className="block text-[#b82e1a] mb-2">Comfort,</span>
+                    <span className="block text-[#b82e1a] mb-2">Elevate</span>
+                    <span className="block text-[#b82e1a]">Your Style</span>
                   </h1>
-                  <p className="text-gray-600 text-lg max-w-md">
+                  <p className="text-gray-600 text-lg max-w-md font-montserrat">
                     Discover the latest fashion trends and express yourself with
                     our curated collection
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <Button className="rounded-full orange-gradient-btn px-8 py-6 text-white shadow-lg">
-                      SHOP NOW
-                    </Button>
+                    <Link href="/shop">
+                      <Button className="rounded-full bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] px-8 py-6 text-white shadow-lg hover:from-[#e23d27] hover:to-[#ff5252] transition-all duration-300">
+                        SHOP NOW
+                      </Button>
+                    </Link>
                     <Link href="/gallery">
                       <Button
                         variant="ghost"
@@ -125,20 +130,18 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-2">New Arrivals</h2>
               <p className="text-gray-500">Discover our latest collection</p>
             </div>
-            <div className="gradient-card p-8">
+            <div className="gradient-card p-8 bg-gradient-to-br from-white via-[#fff5f4] to-[#fff0ee] shadow-xl rounded-2xl">
               <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
                 <ProductCard
                   image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
                   title="Casual Gray Dress"
                   price="$59.00"
-                  colors={["bg-gray-300", "bg-[#f34f38]"]}
                   href="/product/casual-gray-dress"
                 />
                 <ProductCard
                   image="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
                   title="Vintage Floral Dress"
                   price="$79.00"
-                  colors={["bg-gray-200", "bg-blue-300"]}
                   href="/product/vintage-floral-dress"
                 />
                 <ProductCard
@@ -156,7 +159,7 @@ export default function Home() {
               </div>
               <div className="mt-8 text-center">
                 <Link href="/shop" className="inline-block">
-                  <Button className="rounded-full orange-gradient-btn px-8 py-2 text-white shadow-md">
+                  <Button className="rounded-full bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] px-8 py-2 text-white shadow-md hover:from-[#e23d27] hover:to-[#ff5252] transition-all duration-300">
                     VIEW ALL PRODUCTS
                   </Button>
                 </Link>
@@ -172,7 +175,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-2">Trending Categories</h2>
               <p className="text-gray-500">Popular picks from our customers</p>
             </div>
-            <div className="gradient-card p-8">
+            <div className="gradient-card p-8 bg-gradient-to-br from-white via-[#fff5f4] to-[#fff0ee] shadow-xl rounded-2xl">
               <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
                 <ProductCard
                   image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
@@ -202,7 +205,7 @@ export default function Home() {
               </div>
               <div className="mt-8 text-center">
                 <Link href="/shop" className="inline-block">
-                  <Button className="rounded-full orange-gradient-btn px-8 py-2 text-white shadow-md">
+                  <Button className="rounded-full bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] px-8 py-2 text-white shadow-md hover:from-[#e23d27] hover:to-[#ff5252] transition-all duration-300">
                     VIEW ALL CATEGORIES
                   </Button>
                 </Link>
@@ -220,11 +223,11 @@ export default function Home() {
                 Design your perfect outfit with our custom tailoring service
               </p>
             </div>
-            <div className="gradient-card p-8 text-center">
+            <div className="gradient-card p-8 bg-gradient-to-br from-white via-[#fff5f4] to-[#fff0ee] shadow-xl rounded-2xl text-center">
               <div className="max-w-2xl mx-auto mb-6">
                 <p className="text-lg mb-4">Bring your vision to life with our expert tailors and premium fabrics.</p>
                 <Link href="/custom-order" className="inline-block">
-                  <Button className="rounded-full orange-gradient-btn px-8 py-3 text-white shadow-md">
+                  <Button className="rounded-full bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] px-8 py-3 text-white shadow-md hover:from-[#e23d27] hover:to-[#ff5252] transition-all duration-300">
                     START CUSTOM ORDER
                   </Button>
                 </Link>
@@ -264,7 +267,7 @@ export default function Home() {
         {/* Blog */}
         <section className="py-12">
           <div className="container">
-            <div className="bg-white-overlay p-6 md:p-8 rounded-3xl shadow-lg">
+            <div className="bg-white-overlay p-6 md:p-8 rounded-3xl shadow-lg bg-gradient-to-br from-white via-[#fff5f4] to-[#fff0ee]">
               <h2 className="mb-8 text-center text-2xl font-bold">
                 From Our Blog
               </h2>
@@ -475,6 +478,16 @@ export default function Home() {
               <div className="h-6 w-6 rounded-full bg-[#f34f38]"></div>
               <div className="h-6 w-6 rounded-full bg-[#f34f38]"></div>
               <div className="h-6 w-6 rounded-full bg-[#f34f38]"></div>
+            </div>
+            <div className="mt-4 text-right pr-4">
+              <a 
+                href="https://quubetech.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-gray-600 hover:text-[#b82e1a] transition-colors duration-300 inline-flex items-center gap-1.5"
+              >
+                webdesign by <QuubeLogo />
+              </a>
             </div>
           </div>
         </div>
