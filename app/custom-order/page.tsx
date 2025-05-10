@@ -529,11 +529,13 @@ export default function CustomOrder() {
               </Button>
             )}
             {currentStep === ORDER_STEPS.REVIEW && (
-              <Button
-                className="bg-[#f34f38] text-white hover:bg-[#e23d27] ml-auto"
-              >
-                Place Order
-              </Button>
+              <div className="flex justify-center mt-8">
+                <Link href="/payment-terms">
+                  <Button className="px-8 py-6 text-lg bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] hover:from-[#ff6b6b] hover:to-[#f34f38]">
+                    Place Order
+                  </Button>
+                </Link>
+              </div>
             )}
           </div>
         </div>
