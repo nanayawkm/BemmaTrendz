@@ -1,15 +1,20 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Calendar, MessageSquare } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Calendar, MessageSquare } from "lucide-react";
 
 interface BlogCardProps {
-  image: string
-  title: string
-  date: string
-  comments: number
+  image: string;
+  title: string;
+  date: string;
+  comments: number;
 }
 
-export default function BlogCard({ image, title, date, comments }: BlogCardProps) {
+export default function BlogCard({
+  image,
+  title,
+  date,
+  comments,
+}: BlogCardProps) {
   return (
     <div className="group">
       <div className="mb-4 overflow-hidden rounded-2xl shadow-md">
@@ -32,16 +37,16 @@ export default function BlogCard({ image, title, date, comments }: BlogCardProps
             <span>{comments} Comments</span>
           </div>
         </div>
-        <h3 className="font-medium group-hover:text-orange-500 transition-colors">
+        <h3 className="font-medium group-hover:text-[#f34f38] transition-colors">
           <Link href="#">{title}</Link>
         </h3>
         <Link
           href="#"
-          className="inline-block text-sm font-medium text-gray-500 hover:text-orange-500 transition-colors"
+          className="inline-block text-sm font-medium text-gray-500 hover:text-[#f34f38] transition-colors"
         >
           Read More
         </Link>
       </div>
     </div>
-  )
+  );
 }

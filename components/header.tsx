@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { ChevronDown, Search, ShoppingBag, User } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ChevronDown, Search, ShoppingBag, User } from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "/", hasDropdown: false },
@@ -11,10 +11,10 @@ const navItems = [
   { name: "Gallery", href: "/gallery", hasDropdown: false },
   { name: "Contact Us", href: "/contact", hasDropdown: false },
   { name: "Custom Order", href: "/custom-order", hasDropdown: false },
-]
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
@@ -22,7 +22,13 @@ export default function Header() {
         {/* Logo and Brand */}
         <div className="flex items-center">
           <div className="w-10 h-10 relative mr-2">
-            <Image src="/logo.png" alt="BemmaTrendz Logo" width={40} height={40} className="object-contain" />
+            <Image
+              src="/logo.png"
+              alt="BemmaTrendz Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
           </div>
           <div>
             <h1 className="text-xl font-medium">BemmaTrendz</h1>
@@ -35,7 +41,7 @@ export default function Header() {
             <div key={item.name} className="relative group">
               <Link
                 href={item.href}
-                className="text-sm text-gray-700 hover:text-orange-500 flex items-center transition-colors"
+                className="text-sm text-gray-700 hover:text-[#f34f38] flex items-center transition-colors"
               >
                 {item.name}
                 {item.hasDropdown && <ChevronDown className="ml-1 h-3 w-3" />}
@@ -45,19 +51,19 @@ export default function Header() {
                   <div className="py-2">
                     <Link
                       href="/shop?category=women"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f34f38]10 hover:text-[#f34f38]"
                     >
                       Women's Clothing
                     </Link>
                     <Link
                       href="/shop?category=men"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f34f38]10 hover:text-[#f34f38]"
                     >
                       Men's Clothing
                     </Link>
                     <Link
                       href="/shop?category=accessories"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f34f38]10 hover:text-[#f34f38]"
                     >
                       Accessories
                     </Link>
@@ -70,26 +76,35 @@ export default function Header() {
 
         {/* Search and Cart Icons */}
         <div className="flex items-center space-x-4">
-          <button className="p-1 hover:text-orange-500 transition-colors">
+          <button className="p-1 hover:text-[#f34f38] transition-colors">
             <Search className="h-5 w-5" />
           </button>
-          <Link href="/cart" className="p-1 relative hover:text-orange-500 transition-colors">
+          <Link
+            href="/cart"
+            className="p-1 relative hover:text-[#f34f38] transition-colors"
+          >
             <ShoppingBag className="h-5 w-5" />
-            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-[10px] text-white">
+            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#f34f38] text-[10px] text-white">
               2
             </span>
           </Link>
-          <Link href="/account" className="p-1 hover:text-orange-500 transition-colors">
+          <Link
+            href="/account"
+            className="p-1 hover:text-[#f34f38] transition-colors"
+          >
             <User className="h-5 w-5" />
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button
+          className="md:hidden p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
           <div className="w-5 h-4 flex flex-col justify-between">
-            <span className="w-full h-0.5 bg-orange-500"></span>
-            <span className="w-full h-0.5 bg-orange-500"></span>
-            <span className="w-full h-0.5 bg-orange-500"></span>
+            <span className="w-full h-0.5 bg-[#f34f38]"></span>
+            <span className="w-full h-0.5 bg-[#f34f38]"></span>
+            <span className="w-full h-0.5 bg-[#f34f38]"></span>
           </div>
         </button>
       </div>
@@ -98,12 +113,16 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden px-4 py-3 space-y-1 border-t border-gray-100 bg-white">
           {navItems.map((item) => (
-            <Link key={item.name} href={item.href} className="block py-2 text-sm text-gray-700 hover:text-orange-500">
+            <Link
+              key={item.name}
+              href={item.href}
+              className="block py-2 text-sm text-gray-700 hover:text-[#f34f38]"
+            >
               {item.name}
             </Link>
           ))}
         </div>
       )}
     </header>
-  )
+  );
 }

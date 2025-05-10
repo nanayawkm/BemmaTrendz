@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export default function TestimonialSlider() {
   return (
@@ -24,8 +24,9 @@ export default function TestimonialSlider() {
             <div className="w-full md:w-2/3 px-4 md:px-12">
               <div className="text-center">
                 <p className="mb-6 text-lg italic text-gray-600">
-                  "Thank you for such beautiful clothing and exceptional service! I've been a loyal customer for over 3
-                  years and have never been disappointed."
+                  "Thank you for such beautiful clothing and exceptional
+                  service! I've been a loyal customer for over 3 years and have
+                  never been disappointed."
                 </p>
                 <div className="mb-4">
                   <div className="mx-auto h-16 w-16 overflow-hidden rounded-full border-4 border-white shadow-sm">
@@ -44,14 +45,14 @@ export default function TestimonialSlider() {
             </div>
           </div>
           <div className="mt-8 flex justify-center gap-1">
-            <div className="h-2 w-2 rounded-full bg-gray-300"></div>
-            <div className="h-2 w-2 rounded-full bg-gradient-to-r from-orange-400 to-orange-500"></div>
-            <div className="h-2 w-2 rounded-full bg-gray-300"></div>
-            <div className="h-2 w-2 rounded-full bg-gray-300"></div>
-            <div className="h-2 w-2 rounded-full bg-gray-300"></div>
+            <div className="h-2 w-2 rounded-full bg-[#f34f38]"></div>
+            <div className="h-2 w-2 rounded-full bg-[#f34f38]"></div>
+            <div className="h-2 w-2 rounded-full bg-[#f34f38]"></div>
+            <div className="h-2 w-2 rounded-full bg-[#f34f38]"></div>
+            <div className="h-2 w-2 rounded-full bg-[#f34f38]"></div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

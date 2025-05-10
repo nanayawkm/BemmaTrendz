@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --background: 15 100% 97%;
+  --foreground: 222.2 84% 8%;
+  --card: 15 100% 97%;
+  --card-foreground: 222.2 84% 8%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
-  --primary: 24 95% 53%;
+  --primary: 13 93% 59%;
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
+  --accent: 13 93% 59%;
   --accent-foreground: 222.2 47.4% 11.2%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
@@ -49,7 +49,8 @@
 
 /* Replace the existing body background styles with a clean white background */
 body {
-  background-color: #ffffff;
+  background-color: #fff5f3;
+  color: #222;
   position: relative;
 }
 
@@ -65,10 +66,10 @@ body::before {
 
 /* Create a new class for gradient cards */
 .gradient-card {
-  background: linear-gradient(135deg, #fff8f0 0%, #fff2e6 100%);
+  background: linear-gradient(135deg, #fff0ed 0%, #ffe5e0 100%);
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.08);
-  border: 1px solid rgba(249, 115, 22, 0.1);
+  box-shadow: 0 4px 20px rgba(243, 79, 56, 0.08);
+  border: 1px solid rgba(243, 79, 56, 0.1);
   overflow: hidden;
   position: relative;
 }
@@ -85,7 +86,7 @@ body::before {
 } */
 
 .hero-gradient {
-  background: linear-gradient(135deg, #fff8f0 0%, #fff2e6 100%);
+  background: linear-gradient(135deg, #fff0ed 0%, #ffe5e0 100%);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
@@ -98,25 +99,29 @@ body::before {
   right: 0;
   width: 30%;
   height: 30%;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(249, 115, 22, 0.1) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
 }
 
 .bg-white-overlay {
-  background-color: #ffffff;
+  background-color: #fff5f3;
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .orange-gradient-btn {
-  background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
+  background: linear-gradient(90deg, #f34f38 0%, #f34f38 100%);
   color: white;
   transition: all 0.3s ease;
 }
 
 .orange-gradient-btn:hover {
-  background: linear-gradient(90deg, #ea580c 0%, #f97316 100%);
+  background: linear-gradient(90deg, #d63a22 0%, #f34f38 100%);
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
   transform: translateY(-1px);
 }

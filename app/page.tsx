@@ -1,14 +1,14 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import ProductCard from "@/components/product-card"
-import BrandLogo from "@/components/brand-logo"
-import PromotionCard from "@/components/promotion-card"
-import BlogCard from "@/components/blog-card"
-import TestimonialSlider from "@/components/testimonial-slider"
-import InstagramFeed from "@/components/instagram-feed"
-import NewsletterSignup from "@/components/newsletter-signup"
-import Header from "@/components/header"
+import BlogCard from "@/components/blog-card";
+import BrandLogo from "@/components/brand-logo";
+import { Button } from "@/components/ui/button";
+import Header from "@/components/header";
+import Image from "next/image";
+import InstagramFeed from "@/components/instagram-feed";
+import Link from "next/link";
+import NewsletterSignup from "@/components/newsletter-signup";
+import ProductCard from "@/components/product-card";
+import PromotionCard from "@/components/promotion-card";
+import TestimonialSlider from "@/components/testimonial-slider";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       {/* Header */}
       <Header />
 
-      <main>
+      <main className="mx-auto max-w-7xl px-4">
         {/* Hero Section */}
         <section className="relative py-12 md:py-20">
           <div className="container">
@@ -24,26 +24,28 @@ export default function Home() {
               <div className="flex flex-col md:flex-row md:items-center">
                 <div className="md:w-1/2 space-y-6 pb-8 md:pb-0">
                   <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-                    Find Your <span className="text-orange-500">Perfect</span> Style
+                    Find Your <span className="text-[#f34f38]">Perfect</span>{" "}
+                    Style
                   </h1>
                   <p className="text-gray-600 text-lg max-w-md">
-                    Discover the latest fashion trends and express yourself with our curated collection
+                    Discover the latest fashion trends and express yourself with
+                    our curated collection
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <Button className="rounded-full orange-gradient-btn px-8 py-6 text-white shadow-lg">
                       SHOP NOW
                     </Button>
                     <Button
-                      variant="outline"
-                      className="rounded-full border-orange-500 text-orange-500 px-8 py-6 hover:bg-orange-50"
+                      variant="ghost"
+                      className="px-6 py-6 text-[#f34f38] font-semibold bg-transparent border-none shadow-none hover:underline hover:bg-transparent focus:ring-0 focus:outline-none"
                     >
                       EXPLORE
                     </Button>
                   </div>
                 </div>
                 <div className="md:w-1/2 relative">
-                  <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-orange-100 opacity-70"></div>
-                  <div className="absolute -bottom-5 -right-5 w-32 h-32 rounded-full bg-orange-50 opacity-70"></div>
+                  <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-[#f34f38]10 opacity-70"></div>
+                  <div className="absolute -bottom-5 -right-5 w-32 h-32 rounded-full bg-[#f34f38]5 opacity-70"></div>
                   <div className="rounded-3xl overflow-hidden shadow-xl relative z-10">
                     <Image
                       src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
@@ -72,7 +74,7 @@ export default function Home() {
                   image="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
                   title="Casual Gray Dress"
                   price="$59.00"
-                  colors={["bg-gray-300", "bg-orange-500"]}
+                  colors={["bg-gray-300", "bg-[#f34f38]"]}
                   href="/product/casual-gray-dress"
                 />
                 <ProductCard
@@ -86,14 +88,14 @@ export default function Home() {
                   image="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
                   title="Brown Casual Shirt"
                   price="$39.00"
-                  colors={["bg-amber-800", "bg-gray-400", "bg-orange-500"]}
+                  colors={["bg-amber-800", "bg-gray-400", "bg-[#f34f38]"]}
                   href="/product/brown-casual-shirt"
                 />
                 <ProductCard
                   image="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
                   title="Casual Gray Shirt Dress"
                   price="$49.00"
-                  colors={["bg-gray-300", "bg-blue-300", "bg-orange-500"]}
+                  colors={["bg-gray-300", "bg-blue-300", "bg-[#f34f38]"]}
                   href="/product/casual-gray-shirt-dress"
                 />
               </div>
@@ -113,19 +115,23 @@ export default function Home() {
           <div className="container">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold mb-2">Special Offers</h2>
-              <p className="text-gray-500">Limited time deals you don't want to miss</p>
+              <p className="text-gray-500">
+                Limited time deals you don't want to miss
+              </p>
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               <div className="gradient-card p-6 relative overflow-hidden">
                 <div className="space-y-3 relative z-10">
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-medium">
+                  <span className="inline-block px-3 py-1 bg-[#f34f38]10 text-[#f34f38] rounded-full text-xs font-medium">
                     40% OFF
                   </span>
                   <h3 className="text-xl font-bold">Special Make</h3>
-                  <p className="text-gray-600">Exclusive collection with premium quality</p>
+                  <p className="text-gray-600">
+                    Exclusive collection with premium quality
+                  </p>
                   <Button
                     variant="outline"
-                    className="rounded-full border-orange-500 text-orange-500 hover:bg-orange-50"
+                    className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38]10"
                   >
                     SHOP NOW
                   </Button>
@@ -143,14 +149,16 @@ export default function Home() {
 
               <div className="gradient-card p-6 relative overflow-hidden">
                 <div className="space-y-3 relative z-10">
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-medium">
+                  <span className="inline-block px-3 py-1 bg-[#f34f38]10 text-[#f34f38] rounded-full text-xs font-medium">
                     NEW ARRIVALS
                   </span>
                   <h3 className="text-xl font-bold">Combo Offer</h3>
-                  <p className="text-gray-600">Buy two items and get one free</p>
+                  <p className="text-gray-600">
+                    Buy two items and get one free
+                  </p>
                   <Button
                     variant="outline"
-                    className="rounded-full border-orange-500 text-orange-500 hover:bg-orange-50"
+                    className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38]10"
                   >
                     SHOP NOW
                   </Button>
@@ -168,14 +176,16 @@ export default function Home() {
 
               <div className="gradient-card p-6 relative overflow-hidden">
                 <div className="space-y-3 relative z-10">
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-medium">
+                  <span className="inline-block px-3 py-1 bg-[#f34f38]10 text-[#f34f38] rounded-full text-xs font-medium">
                     20% OFF
                   </span>
                   <h3 className="text-xl font-bold">New Arrival</h3>
-                  <p className="text-gray-600">Fresh styles for the new season</p>
+                  <p className="text-gray-600">
+                    Fresh styles for the new season
+                  </p>
                   <Button
                     variant="outline"
-                    className="rounded-full border-orange-500 text-orange-500 hover:bg-orange-50"
+                    className="rounded-full border-[#f34f38] text-[#f34f38] hover:bg-[#f34f38]10"
                   >
                     SHOP NOW
                   </Button>
@@ -245,7 +255,9 @@ export default function Home() {
           <div className="container">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold mb-2">Our Brands</h2>
-              <p className="text-gray-500">Quality partnerships we're proud of</p>
+              <p className="text-gray-500">
+                Quality partnerships we're proud of
+              </p>
             </div>
             <div className="gradient-card p-8">
               <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
@@ -295,7 +307,9 @@ export default function Home() {
         <section className="py-12">
           <div className="container">
             <div className="bg-white-overlay p-6 md:p-8 rounded-3xl shadow-lg">
-              <h2 className="mb-8 text-center text-2xl font-bold">From Our Blog</h2>
+              <h2 className="mb-8 text-center text-2xl font-bold">
+                From Our Blog
+              </h2>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <BlogCard
                   image="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80"
@@ -352,27 +366,42 @@ export default function Home() {
               <h3 className="mb-4 font-bold">Help</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Search
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Help
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Information
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Shipping Details
                   </Link>
                 </li>
@@ -382,27 +411,42 @@ export default function Home() {
               <h3 className="mb-4 font-bold">Support</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Size Guide
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Shopping & Returns
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Privacy
                   </Link>
                 </li>
@@ -412,27 +456,42 @@ export default function Home() {
               <h3 className="mb-4 font-bold">Information</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     My Account
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Login
                   </Link>
                 </li>
                 <li>
-                  <Link href="/cart" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="/cart"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Cart
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Wishlist
                   </Link>
                 </li>
                 <li>
-                  <Link href="/checkout" className="hover:text-orange-500 transition-colors">
+                  <Link
+                    href="/checkout"
+                    className="hover:text-[#f34f38] transition-colors"
+                  >
                     Checkout
                   </Link>
                 </li>
@@ -442,13 +501,13 @@ export default function Home() {
           <div className="border-t py-6 text-center text-sm text-gray-500">
             <p>Copyright © 2023 BemmaTrendz - All rights reserved</p>
             <div className="mt-4 flex justify-center gap-2">
-              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-orange-400 to-orange-500"></div>
-              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-orange-300 to-orange-400"></div>
-              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-orange-500 to-orange-600"></div>
+              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#f34f38] to-[#f34f38]"></div>
+              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#f34f38] to-[#f34f38]"></div>
+              <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#f34f38] to-[#f34f38]"></div>
             </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
