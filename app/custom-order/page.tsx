@@ -228,15 +228,15 @@ export default function CustomOrder() {
   const renderStepContent = () => {
     switch (currentStep) {
       case ORDER_STEPS.FABRIC:
-        return (
+  return (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Choose Your Fabric</h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Select from our premium collection of fabrics, each chosen for its quality, comfort, and style.
               </p>
-            </div>
-            
+          </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {fabricCategories.map((fabric) => (
                 <div
@@ -249,7 +249,7 @@ export default function CustomOrder() {
                   }`}
                 >
                   <div className="relative w-full h-64">
-                    <Image
+                    <Image 
                       src={fabric.image}
                       alt={fabric.name}
                       fill
@@ -296,8 +296,8 @@ export default function CustomOrder() {
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Choose from our exclusive collection of Bubu styles, each crafted with precision and cultural significance.
               </p>
-            </div>
-            
+          </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {bubuStyles.map((style) => (
                 <button
@@ -310,7 +310,7 @@ export default function CustomOrder() {
                   }`}
                 >
                   <div className="relative w-full h-64">
-                    <Image
+                    <Image 
                       src={style.image}
                       alt={style.name}
                       fill
@@ -332,7 +332,7 @@ export default function CustomOrder() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         )}
-                      </div>
+                        </div>
                     </div>
                   </div>
                 </button>
@@ -359,7 +359,7 @@ export default function CustomOrder() {
                   <div className="mb-8">
                     <h3 className="font-medium mb-3">Primary Color</h3>
                     <div className="relative">
-                      <button
+                        <button
                         className="w-full h-12 rounded-lg border-2 border-gray-200 flex items-center justify-between px-4"
                         onClick={() => setShowPrimaryPicker(!showPrimaryPicker)}
                       >
@@ -383,7 +383,7 @@ export default function CustomOrder() {
                   <div className="mb-8">
                     <h3 className="font-medium mb-3">Secondary Color</h3>
                     <div className="relative">
-                      <button
+                        <button
                         className="w-full h-12 rounded-lg border-2 border-gray-200 flex items-center justify-between px-4"
                         onClick={() => setShowSecondaryPicker(!showSecondaryPicker)}
                       >
@@ -466,7 +466,7 @@ export default function CustomOrder() {
                       <div className="w-16 h-16 rounded-full mb-2" style={{ backgroundColor: secondaryColor }}></div>
                       <span className="text-sm font-medium">{getColorName(secondaryColor)}</span>
                     </div>
-                  </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -498,9 +498,9 @@ export default function CustomOrder() {
                     currentStep === step ? 'bg-[#f34f38]' : 'bg-gray-200'
                   } text-white rounded-full flex items-center justify-center mx-auto mb-3`}>
                     <span>{index + 1}</span>
-                  </div>
+              </div>
                   <h3 className="font-medium capitalize">{step}</h3>
-                </div>
+              </div>
               ))}
             </div>
           </div>

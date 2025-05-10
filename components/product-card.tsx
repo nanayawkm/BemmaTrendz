@@ -44,7 +44,7 @@ export default function ProductCard({
       </Link>
       <div className="flex flex-col p-2">
         <h3 className="mb-2 text-base font-medium line-clamp-1">{title}</h3>
-        <p className="mb-3 font-semibold text-[#f34f38] text-lg">{price}</p>
+        <p className="mb-3 font-semibold text-black text-lg">{price}</p>
         {colors && (
           <div className="flex gap-2 mt-auto">
             {colors.map((color, index) => (
