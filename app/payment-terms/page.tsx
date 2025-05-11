@@ -41,8 +41,8 @@ export default function PaymentTerms() {
                       <h3 className="font-montserrat font-medium text-lg text-gray-900">Initial Payment</h3>
                       <div className="text-right">
                         <div className="flex items-baseline justify-end">
-                          <span className="text-sm font-medium text-black mr-1">₦</span>
-                          <span className="text-2xl font-bold text-black tracking-tight">350,000</span>
+                          <span className="text-sm font-medium text-black mr-1">₵</span>
+                          <span className="text-2xl font-bold text-black tracking-tight">350.00</span>
                         </div>
                         <span className="text-sm text-gray-500">70% of total</span>
                       </div>
@@ -62,8 +62,8 @@ export default function PaymentTerms() {
                       <h3 className="font-montserrat font-medium text-lg text-gray-900">Final Payment</h3>
                       <div className="text-right">
                         <div className="flex items-baseline justify-end">
-                          <span className="text-sm font-medium text-black mr-1">₦</span>
-                          <span className="text-2xl font-bold text-black tracking-tight">150,000</span>
+                          <span className="text-sm font-medium text-black mr-1">₵</span>
+                          <span className="text-2xl font-bold text-black tracking-tight">150.00</span>
                         </div>
                         <span className="text-sm text-gray-500">30% of total</span>
                       </div>
@@ -79,8 +79,8 @@ export default function PaymentTerms() {
                     <span className="font-montserrat font-medium text-lg text-gray-900">Total Amount</span>
                     <div className="text-right">
                       <div className="flex items-baseline justify-end">
-                        <span className="text-base font-medium text-black mr-1">₦</span>
-                        <span className="text-3xl font-bold text-black tracking-tight">500,000</span>
+                        <span className="text-base font-medium text-black mr-1">₵</span>
+                        <span className="text-3xl font-bold text-black tracking-tight">500.00</span>
                       </div>
                       <span className="text-sm text-gray-500">Including all fees</span>
                     </div>

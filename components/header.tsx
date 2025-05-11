@@ -23,23 +23,25 @@ export default function Header() {
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo and Brand */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <Image
-                src="/logo.png"
-                alt="BemmaTrendz Logo"
-                width={40}
-                height={40}
-                className="cursor-pointer transition-transform duration-300 group-hover:scale-110"
-              />
+            <Link href="/" className="flex items-center space-x-1 sm:space-x-2 group">
+              <div className="relative w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
+                <Image
+                  src="/logo.png"
+                  alt="BemmaTrendz Logo"
+                  fill
+                  sizes="(max-width: 375px) 28px, (max-width: 640px) 32px, 40px"
+                  className="cursor-pointer transition-transform duration-300 group-hover:scale-110 object-contain"
+                />
+              </div>
               <div className="relative">
-                <span className="text-xl md:text-2xl font-playfair font-bold bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105 tracking-wide">
+                <span className="text-base sm:text-lg md:text-2xl font-playfair font-bold bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105 tracking-wide">
                   Bemma
                 </span>
-                <span className="text-xl md:text-2xl font-montserrat font-light tracking-[0.2em] text-gray-800 transition-all duration-300 group-hover:scale-105">
+                <span className="text-base sm:text-lg md:text-2xl font-montserrat font-light tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] text-gray-800 transition-all duration-300 group-hover:scale-105">
                   Trendz
                 </span>
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] transition-all duration-300 group-hover:w-full"></div>
@@ -107,7 +109,7 @@ export default function Header() {
                     placeholder="Search products..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-[200px] pl-8 pr-4 py-1 text-sm border-gray-200 focus:border-[#f34f38] focus:ring-[#f34f38]"
+                    className="w-[150px] sm:w-[200px] pl-8 pr-4 py-1 text-sm border-gray-200 focus:border-[#f34f38] focus:ring-[#f34f38]"
                     autoFocus
                   />
                   <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -148,16 +150,48 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden px-4 py-3 space-y-1 border-t border-gray-100 bg-white">
+        <div className="md:hidden px-4 py-3 space-y-1 border-t border-gray-100 bg-white shadow-md fixed w-full">
+          <div className="flex justify-end pb-2">
+            <button onClick={() => setMobileMenuOpen(false)} className="p-1 text-gray-500">
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="pb-4">
+            <Input
+              type="text"
+              placeholder="Search products..."
+              className="w-full pl-8 pr-4 py-2 text-sm border-gray-200 focus:border-[#f34f38] focus:ring-[#f34f38] mb-2"
+            />
+            <Search className="absolute left-6 top-[65px] transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          </div>
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="block py-2 text-sm text-gray-700 hover:text-[#f34f38]"
+              className="block py-3 text-sm text-gray-700 hover:text-[#f34f38] border-b border-gray-100 last:border-0"
+              onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
             </Link>
           ))}
+          <div className="pt-2 flex justify-center space-x-4">
+            <Link 
+              href="/cart" 
+              className="flex items-center gap-1 text-sm text-gray-700 py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <ShoppingBag className="h-4 w-4" />
+              <span>Cart (2)</span>
+            </Link>
+            <Link 
+              href="/account" 
+              className="flex items-center gap-1 text-sm text-gray-700 py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <User className="h-4 w-4" />
+              <span>Account</span>
+            </Link>
+          </div>
         </div>
       )}
     </header>
