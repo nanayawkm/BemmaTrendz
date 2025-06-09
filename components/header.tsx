@@ -30,7 +30,7 @@ export default function Header() {
             <Link href="/" className="flex items-center space-x-1 sm:space-x-2 group">
               <div className="relative w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
                 <Image
-                  src="/logo.png"
+                  src="/logo.PNG"
                   alt="BemmaTrendz Logo"
                   fill
                   sizes="(max-width: 375px) 28px, (max-width: 640px) 32px, 40px"
