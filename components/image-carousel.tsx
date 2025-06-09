@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import useEmblaCarousel from 'embla-carousel-react';
 import Image from "next/image";
 
 const carouselImages = [
@@ -26,46 +24,42 @@ const carouselImages = [
 ];
 
 export default function ImageCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    dragFree: true,
+    containScroll: "trimSnaps"
+  });
+
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    fade: true
-  };
-
   if (!mounted) return null;
 
   return (
-    <div className="w-full h-[500px] relative">
-      <Slider {...settings}>
-        {carouselImages.map((image, index) => (
-          <div key={index} className="relative h-[500px]">
-            <Image
-              src={image.url}
-              alt={image.alt}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-              <h2 className="text-4xl font-bold text-white text-center px-4">
-                {image.alt}
-              </h2>
+    <div className="w-full h-[500px] relative overflow-hidden">
+      <div className="embla" ref={emblaRef}>
+        <div className="embla__container flex">
+          {carouselImages.map((image, index) => (
+            <div key={index} className="embla__slide flex-[0_0_100%] min-w-0 relative h-[500px]">
+              <Image
+                src={image.url}
+                alt={image.alt}
+                fill
+                className="object-cover"
+                priority={index === 0}
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                <h2 className="text-4xl font-bold text-white text-center px-4">
+                  {image.alt}
+                </h2>
+              </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </div>
+      </div>
     </div>
   );
 } 

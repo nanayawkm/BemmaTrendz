@@ -454,4 +454,9 @@ export default function CheckoutPage() {
           </div>
           <div className="border-t py-6 text-center text-sm text-gray-500">
             <p>Copyright © 2023 BemmaTrendz - All rights reserved</p>
-            <div className="mt-4 flex\
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

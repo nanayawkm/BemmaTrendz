@@ -211,3 +211,62 @@ body::before {
 .font-montserrat {
   font-family: var(--font-montserrat);
 }
+
+/* Mobile responsiveness improvements */
+@media (max-width: 640px) {
+  .font-playfair span:hover {
+    transform: none; /* Disable transform on mobile for better performance */
+  }
+  
+  /* Ensure text doesn't get cut off on small screens */
+  .hero-section h1 {
+    line-height: 1.1;
+    word-break: break-word;
+  }
+  
+  /* Better spacing for mobile */
+  .font-playfair span {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Ensure images are properly responsive */
+  .product-image {
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+  
+  /* Fix button sizes on mobile */
+  .mobile-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* iPad and tablet improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .font-playfair {
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Ensure proper image loading and display */
+.next-image {
+  transition: opacity 0.3s ease;
+}
+
+.next-image.loading {
+  opacity: 0.7;
+}
+
+/* Fix for very small screens */
+@media (max-width: 375px) {
+  .font-playfair {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

@@ -69,14 +69,14 @@ export default function Home() {
             <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 max-w-none relative z-10">
               <div className="flex flex-col md:flex-row md:items-start lg:items-center gap-8 md:gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 justify-between">
                 <div className="md:w-5/12 lg:w-5/12 xl:w-5/12 space-y-5 sm:space-y-6 md:space-y-8 pb-4 sm:pb-6 md:pb-0 md:pl-0 lg:pl-0 xl:pl-0">
-                  <h1 className="font-playfair text-[3rem] xs:text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] font-extrabold leading-tight text-center text-[#b82e1a] drop-shadow-[0_4px_16px_rgba(0,0,0,0.18)]">
-                    <span className="block mb-4 sm:mb-6 md:mb-8">Embrace Comfort,</span>
+                  <h1 className="font-playfair text-[2rem] xs:text-[2.5rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] font-extrabold leading-tight text-center md:text-left text-[#b82e1a] drop-shadow-[0_4px_16px_rgba(0,0,0,0.18)]">
+                    <span className="block mb-2 sm:mb-3 md:mb-4">Embrace Comfort,</span>
                     <span className="block">Elevate Your Style.</span>
                   </h1>
-                  <p className="text-gray-700 text-base xs:text-lg sm:text-xl max-w-lg font-montserrat text-left">
+                  <p className="text-gray-700 text-base xs:text-lg sm:text-xl max-w-lg font-montserrat text-center md:text-left">
                     Discover the latest fashion trends and express yourself with our curated collection.
                   </p>
-                  <div className="flex flex-wrap gap-4 xs:gap-5 sm:gap-6 justify-start">
+                  <div className="flex flex-wrap gap-4 xs:gap-5 sm:gap-6 justify-center md:justify-start">
                     <Link href="/shop">
                       <Button className="rounded-full bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] px-5 xs:px-7 sm:px-9 py-3 xs:py-4 sm:py-6 text-white shadow-lg hover:from-[#e23d27] hover:to-[#ff5252] transition-all duration-300 text-sm xs:text-base sm:text-lg">
                         SHOP NOW
@@ -303,22 +303,6 @@ export default function Home() {
 
         {/* Testimonials */}
         {/* <TestimonialSlider /> */}
-
-        {/* Newsletter */}
-        <section className="py-12 sm:py-16 md:py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 md:px-8">
-            <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 font-playfair tracking-wide text-black">Join our newsletter</h2>
-              <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Stay updated with the latest trends and exclusive offers.</p>
-            </div>
-            <div className="p-6 sm:p-8 md:p-10 bg-white shadow-xl rounded-2xl text-center">
-              <form className="flex flex-col sm:flex-row gap-4 justify-center">
-                <input type="email" placeholder="Enter your email" className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f34f38]" />
-                <button type="submit" className="px-6 py-2 bg-gradient-to-r from-[#f34f38] to-[#ff6b6b] text-white rounded-lg shadow-lg hover:from-[#e23d27] hover:to-[#ff5252] transition-all duration-300">Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </section>
 
         {/* Instagram Feed */}
         {/* <InstagramFeed instagramUrl="https://instagram.com/bemmatrendz" /> */}
